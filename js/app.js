@@ -12,29 +12,28 @@ function crearMensaje(e){
 	e.preventDefault();
 	var contenedor = document.getElementById("mensajes");
 	var texto = this.previousElementSibling.previousElementSibling;
-	console.log(texto);
-	var cajaMensaje = document.createElement("div");
-	cajaMensaje.classList.add("p-3");
 
-	var rowUno = document.createElement("div");
-	rowUno.className = "row";
-	var colUno = document.createElement("div");
-	var colDos = document.createElement("div");
-	colUno.className = "col s2";
-	colDos.className = "col s10";
+	var cajaMensaje = document.createElement("div");
+	cajaMensaje.classList.add("card", "horizontal");
+
+	var cardImagen = document.createElement("div");
 	var fotoPerfil = document.createElement("img");
 	var src = localStorage.getItem("imagen");
+	cardImagen.className ="card-image";
 	fotoPerfil.setAttribute("src", src);
-	fotoPerfil.classList.add("circle", "responsive-img");
-	colUno.appendChild(fotoPerfil);
-	rowUno.appendChild(colUno);
+	cardImagen.appendChild(fotoPerfil);
+
+	var cardTexto =document.createElement("div");
 	var mensaje = document.createElement("div");
-	var fotoNombre =document.createElement("div");
+	var parrafo = document.createElement("p");
+	cardTexto.className = "card-stacked";
+	mensaje.className ="card-content";
+	parrafo.textContent = texto.value;
+	mensaje.appendChild(parrafo);
+	cardTexto.appendChild(mensaje);
 
-	mensaje.textContent = texto.value;
-
-	cajaMensaje.appendChild(rowUno);
-	cajaMensaje.appendChild(mensaje);
+	cajaMensaje.appendChild(cardImagen);
+	cajaMensaje.appendChild(cardTexto);
 	contenedor.appendChild(cajaMensaje);
 
 	texto.value="";
