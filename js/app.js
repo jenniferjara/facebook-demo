@@ -1,6 +1,7 @@
 window.addEventListener("load", cargarPagina);
 	var foto = document.getElementById("perfil").src;
 	/*localStorage.setItem("imagen", foto);*/
+	var hora = new Date().toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
 	var textArea =  document.getElementById("textarea");
 	var boton = document.getElementById("btn");
 
@@ -27,9 +28,14 @@ function crearMensaje(e){
 		fotoPerfil.classList.add("circle", "responsive-img");
 		ladoIzquierdo.appendChild(fotoPerfil);
 
-		var publicacion = document.createElement("span");
+		var publicacion = document.createElement("div");
+		publicacion.className="publicacion";
 		publicacion.textContent = textArea.value;
 		ladoDerecho.appendChild(publicacion);
+
+		var reloj =document.createElement("div");
+		reloj.textContent=hora;
+		ladoDerecho.appendChild(reloj);
 
 		cajaMensaje.appendChild(ladoIzquierdo);
 		cajaMensaje.appendChild(ladoDerecho);
