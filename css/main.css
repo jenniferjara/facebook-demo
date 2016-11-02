@@ -46,8 +46,9 @@ textarea.materialize-textarea:focus:not([readonly])+label{
 	overflow-wrap: break-word;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
-    color: #004d40;
+    color: #1a237e;
     display: inline-block;
+    font-weight: bold;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
     color: #00897b;
