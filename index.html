@@ -2,10 +2,11 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Ejercicio</title>
+	<title>Facebook</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 	<link type="text/css" rel="stylesheet" href="css/vendor/materialize.min.css" media="screen">
 	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" type="img/png" href="facebook-icon.png">
 </head>
 <body>
 	<nav>
@@ -13,17 +14,15 @@
 			<a href="#" class="brand-logo center">Facebook</a>
 		</div>
 	</nav>
-	<div class="container">
-		<div class="card">
-			<div class="row  p-3">
-				<div class="col s2">
-					<img id="perfil" class="circle responsive-img" src="img/perfil.jpg" alt="perfil">
-				</div>
-				<div class="input-field col s10">
-						<textarea id="textarea" class="materialize-textarea"></textarea>
-						<label for="textarea">¿Qué estás pensando?</label>
-						<button class="btn indigo darken-1 right" id="btn">publicar<i class="material-icons left">send</i></button>
-				</div>
+	<div class="contenedor">
+		<div class="row card p-3">
+			<div class="col s2">
+				<img id="perfil" class="circle responsive-img" src="img/perfil.jpg" alt="perfil">
+			</div>
+			<div class="input-field col s10">
+					<textarea id="textarea" class="materialize-textarea"></textarea>
+					<label for="textarea">¿Qué estás pensando?</label>
+					<button class="btn indigo darken-1 right" id="btn">publicar<i class="material-icons left">send</i></button>
 			</div>
 		</div>
 		<div id="mensajes"></div>

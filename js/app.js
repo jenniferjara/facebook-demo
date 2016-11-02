@@ -1,40 +1,53 @@
 window.addEventListener("load", cargarPagina);
-
-function cargarPagina(){
 	var foto = document.getElementById("perfil").src;
-	localStorage.setItem("imagen", foto);
+	/*localStorage.setItem("imagen", foto);*/
 	var textArea =  document.getElementById("textarea");
 	var boton = document.getElementById("btn");
-	boton.addEventListener("click", crearMensaje);
-}
 
+function cargarPagina(){
+	boton.disabled = true;
+	boton.addEventListener("click", crearMensaje);
+	textArea.addEventListener("keyup", validarMensaje);
+}
 function crearMensaje(e){
 	e.preventDefault();
-	var contenedor = document.getElementById("mensajes");
-	var texto = this.previousElementSibling.previousElementSibling;
+	if(existeContenido(textArea.value)){
+		var contenedor = document.getElementById("mensajes");
 
-	var cajaMensaje = document.createElement("div");
-	cajaMensaje.classList.add("card", "horizontal");
+		var cajaMensaje = document.createElement("div");
+		cajaMensaje.classList.add("row");
+		var ladoDerecho = document.createElement("div");
+		ladoDerecho.className ="col s10";
+		var ladoIzquierdo = document.createElement("div");
+		ladoIzquierdo.className="col s2";
 
-	var cardImagen = document.createElement("div");
-	var fotoPerfil = document.createElement("img");
-	var src = localStorage.getItem("imagen");
-	cardImagen.className ="card-image";
-	fotoPerfil.setAttribute("src", src);
-	cardImagen.appendChild(fotoPerfil);
+		var fotoPerfil = document.createElement("img");
+		/*var src = localStorage.getItem("imagen");*/
+		fotoPerfil.setAttribute("src", foto);
+		fotoPerfil.classList.add("circle", "responsive-img");
+		ladoIzquierdo.appendChild(fotoPerfil);
 
-	var cardTexto =document.createElement("div");
-	var mensaje = document.createElement("div");
-	var parrafo = document.createElement("p");
-	cardTexto.className = "card-stacked";
-	mensaje.className ="card-content";
-	parrafo.textContent = texto.value;
-	mensaje.appendChild(parrafo);
-	cardTexto.appendChild(mensaje);
+		var publicacion = document.createElement("span");
+		publicacion.textContent = textArea.value;
+		ladoDerecho.appendChild(publicacion);
 
-	cajaMensaje.appendChild(cardImagen);
-	cajaMensaje.appendChild(cardTexto);
-	contenedor.appendChild(cajaMensaje);
+		cajaMensaje.appendChild(ladoIzquierdo);
+		cajaMensaje.appendChild(ladoDerecho);
+		contenedor.appendChild(cajaMensaje);
 
-	texto.value="";
+		textArea.value="";
+	}
+	
+}
+function validarMensaje() {
+	var mensaje = textArea.value.trim();
+	if (mensaje.length == 0) {
+		boton.disabled = true;
+	} else {boton.disabled = false;}
+}
+
+function existeContenido(mensaje) {
+	mensaje = mensaje.trim();
+	if (mensaje.length == 0) {return false;} 
+	else {return true;}
 }
