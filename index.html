@@ -14,18 +14,38 @@
 			<a href="#" class="brand-logo center">Facebook</a>
 		</div>
 	</nav>
-	<div class="contenedor">
-		<div class="row card p-3">
-			<div class="col s2">
-				<img id="perfil" class="circle responsive-img" src="img/perfil.jpg" alt="perfil">
+	<div class="container">
+		<div class="row p-3">
+			<div class="col s6">
+				<div class="row card p-3">
+					<div class="col s2">
+						<img id="perfil" class="circle responsive-img" src="img/perfil.jpg" alt="perfil">
+					</div>
+					<div class="input-field col s10">
+							<textarea id="textarea" class="materialize-textarea"></textarea>
+							<label for="textarea">¿Qué estás pensando?</label>
+							<button class="btn indigo darken-1 right" id="btn">publicar<i class="material-icons left">send</i></button>
+					</div>
+				</div>
+				<div class="row card p-3">
+					<div class="col s12">
+						<div class="card">
+			            <div class="card-content indigo-text darken-4">
+			              <span class="card-title">Jennifer Jara</span>
+			              <p>Hola, soy Front-end development jr.</p>
+			            </div>
+			            <div class="card-action teal-text darken-4">
+			              <a target="_blank" href="https://jenniferjara.github.io/miportafolio/">Mi portafolio</a>
+			              <a target="_blank" href="https://www.youtube.com/c/je2nifer">Mi hobbie en youtube</a>
+			            </div>
+			          </div>
+					</div>
+				</div>
 			</div>
-			<div class="input-field col s10">
-					<textarea id="textarea" class="materialize-textarea"></textarea>
-					<label for="textarea">¿Qué estás pensando?</label>
-					<button class="btn indigo darken-1 right" id="btn">publicar<i class="material-icons left">send</i></button>
+			<div class="col s6">
+				<div id="mensajes"></div>
 			</div>
-		</div>
-		<div id="mensajes"></div>
+		</div>		
 	</div>
 
 	<script type="text/javascript" src="js/vendor/jquery-2.1.1.min.js"></script>

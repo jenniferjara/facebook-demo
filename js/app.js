@@ -1,6 +1,9 @@
 window.addEventListener("load", cargarPagina);
 	var foto = document.getElementById("perfil").src;
 	/*localStorage.setItem("imagen", foto);*/
+	var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+	var f = new Date();
+	var fecha = (f.getDate() + " de " + meses[f.getMonth()]);
 	var hora = new Date().toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
 	var textArea =  document.getElementById("textarea");
 	var boton = document.getElementById("btn");
@@ -16,7 +19,7 @@ function crearMensaje(e){
 		var contenedor = document.getElementById("mensajes");
 
 		var cajaMensaje = document.createElement("div");
-		cajaMensaje.classList.add("row");
+		cajaMensaje.classList.add("row", "card", "p-3");
 		var ladoDerecho = document.createElement("div");
 		ladoDerecho.className ="col s10";
 		var ladoIzquierdo = document.createElement("div");
@@ -34,7 +37,8 @@ function crearMensaje(e){
 		ladoDerecho.appendChild(publicacion);
 
 		var reloj =document.createElement("div");
-		reloj.textContent=hora;
+		reloj.className="indigo-text darken-1";
+		reloj.textContent="Publicado el " + fecha + " a las " + hora;
 		ladoDerecho.appendChild(reloj);
 
 		cajaMensaje.appendChild(ladoIzquierdo);

@@ -28,8 +28,9 @@ body{
 .p-3{padding: 3%}
 
 #mensajes{
-	height: 15skln  m em;
-	overflow: auto;
+	height: 30em;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 textarea.materialize-textarea{padding: 0px;}
 textarea.materialize-textarea:focus:not([readonly]){
@@ -41,5 +42,13 @@ textarea.materialize-textarea:focus:not([readonly])+label{
 	font-size: 1rem;
 }
 .publicacion{
+	font-size: 1.2em;
 	overflow-wrap: break-word;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+    color: #004d40;
+    display: inline-block;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+    color: #00897b;
 }
