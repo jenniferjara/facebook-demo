@@ -10,6 +10,8 @@ Este proyecto uso de base a Facebook.
 
 	* En html y css utilce el framework Materialize.
 
-###Ejemplo:
+###Previa:
+
+[Demo](https://jenniferjara.github.io/facebook-demo "Demo")
 
 ![imagen](http://i68.tinypic.com/35mhzd5.png)
