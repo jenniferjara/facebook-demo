@@ -5,7 +5,7 @@
 }
 body{
 	background-image: url(../img/fondo.png);
-	background-position: center;
+	background-position: 85%;
 	background-attachment: fixed;
 	background-size: cover;
 	height: 100vh;
